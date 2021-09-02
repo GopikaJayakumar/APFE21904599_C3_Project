@@ -71,4 +71,22 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//<<<<<<<<<<<<<<<<<<<<<<<TOTAL_ORDER_VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    // get a list of items in string format
+    // find the price of each item and add up
+    // return the total cost
+
+    @Test
+    public void list_of_items_should_return_total_cost_of_order(){
+
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Sizzling brownie",319);
+
+        int totalOrderValue = restaurant.getOrderTotal("Sweet corn soup", "Vegetable lasagne", "Sizzling brownie");
+        assertEquals(totalOrderValue, 707);
+    }
+
 }
